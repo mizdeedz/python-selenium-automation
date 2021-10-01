@@ -4,7 +4,6 @@ from selenium.webdriver.common.keys import Keys
 
 # init driver
 driver = webdriver.Chrome(r'C:\Users\jessi\repo\qa_auto\python-selenium-automation\chromedriver_win32\chromedriver.exe')
-driver.maximize_window()
 
 # open the webpage
 driver.get('https://www.amazon.com/gp/help/customer/display.html')
