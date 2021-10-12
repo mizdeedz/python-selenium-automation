@@ -43,6 +43,7 @@ def verify_footer_links_count(context, expected_amount):
 #     # if this is written without converting the str expected_amount to an int,
 #     #    the assertion will fail
 
+
 # find_elements hamburger example
 
 # @then('Verify hamburger menu icon is present')
