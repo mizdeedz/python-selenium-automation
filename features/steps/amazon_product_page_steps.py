@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 
 
 PRODUCT_NAME = (By.ID, 'productTitle')
@@ -23,7 +22,6 @@ def store_product_name(context):
 @when('Click add to cart')
 def add_product_to_cart(context):
     context.driver.find_element(*ADD_TO_CART).click()
-    sleep(2)
 
 
 @then('Verify user can click through colors')
@@ -36,6 +34,17 @@ def verify_can_click_through_colors(context):
         colors[i].click()
         current_color = context.driver.find_element(*CURRENT_COLOR).text
         assert current_color == expected_colors[i], f'Error expected {expected_colors[i]} did not match {current_color}'
+
+
+@then('Verify user can select all colors')
+def verify_can_select_all_colors(context):
+    expected_result = ['Black', 'Blue', 'Burgundy', 'Caramel', 'Denim Blue', 'Gray', 'Green']
+    product_colors = context.driver.find_elements(*COLOR_OPTIONS)
+
+    for i in range((len(product_colors[:7]))):
+        product_colors[i].click()
+        actual_color = context.driver.find_element(*CURRENT_COLOR).text
+        assert actual_color == expected_result[i], f'Expected {expected_result[i]} but got {actual_color}'
 
 
     # alternate way of solving - gather into list and compare list to list
