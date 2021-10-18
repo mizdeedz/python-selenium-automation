@@ -3,6 +3,7 @@ from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
+
 HAM_MENU_ICON = (By.ID, "nav-hamburger-menu")
 FOOTER_LINKS = (By.CSS_SELECTOR, ".navFooterMoreOnAmazon a.nav_a")
 SIGN_IN_POPUP_BTN = (By.CSS_SELECTOR, "#nav-signin-tooltip a[data-nav-role='signin']")

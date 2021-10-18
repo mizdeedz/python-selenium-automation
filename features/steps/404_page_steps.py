@@ -10,7 +10,7 @@ DOG_IMG = (By.CSS_SELECTOR, "img[alt='Dogs of Amazon']")
 @given('Store original window')
 def store_current_window(context):
     context.original_window = context.driver.current_window_handle
-    print(f'Current window handle {context.original_window}')
+    # print(f'Current window handle {context.original_window}')
 
 
 @when('Click on a dog image')
@@ -22,6 +22,6 @@ def click_dog_img(context):
 @when('Switch to new window')
 def switch_window(context):
     all_window_handles = context.driver.window_handles # [0, 1]
-    print(all_window_handles)
+    # print(all_window_handles)
     context.driver.switch_to.window(all_window_handles[1])
-    print(f'Current window handle (after switch): {context.driver.current_window_handle}')
+    # print(f'Current window handle (after switch): {context.driver.current_window_handle}')
