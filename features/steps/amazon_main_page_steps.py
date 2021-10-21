@@ -26,9 +26,7 @@ def click_search(context):
 
 @when('Click Sign In from popup')
 def click_sign_in_popup(context):
-    context.driver.wait.until(
-        EC.element_to_be_clickable((SIGN_IN_POPUP_BTN)), message='Sign in btn not clickable'
-    ).click()
+    context.app.header.click_sign_in_popup()
 
 
 @when('Sign In pop up appears')

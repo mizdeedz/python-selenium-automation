@@ -6,3 +6,4 @@ Feature: test cases for cart functionality
     Given Open Amazon page
     When Click on the cart icon
     Then Verify cart has 0 items
+    And Verify Your Amazon Cart is empty text present

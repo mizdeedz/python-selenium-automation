@@ -2,20 +2,22 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 
-cart_icon = (By.CSS_SELECTOR, "a[href*='/gp/cart/view']")
-cart_count = (By.ID, "nav-cart-count")
 cart_name = (By.CSS_SELECTOR, '#sc-active-cart li')
 
 
 @when('Click on the cart icon')
 def click_cart(context):
-    context.driver.find_element(*cart_icon).click()
+    context.app.header.click_cart_icon()
 
 
 @then('Verify cart has {expected_result} items')
 def cart_item_count(context, expected_result):
-    actual_result = context.driver.find_element(*cart_count).text
-    assert actual_result == expected_result, f'Error! Actual {actual_result} does not match Expected {expected_result}'
+    context.app.cart_page.cart_item_count(expected_result)
+
+
+@then('Verify {expected_text} text present')
+def cart_empty_text(context, expected_text):
+    context.app.cart_page.cart_empty_message(expected_text)
 
 
 @then('Verify correct product is in cart')
