@@ -4,6 +4,7 @@ from pages.search_results_page import SearchResults
 from pages.amazon_prime_page import AmazonPrimePage
 from pages.sign_in_page import SignInPage
 from pages.cart_page import Cart
+from pages.product_detail_page import ProductDetailPage
 
 class Application():
 
@@ -15,3 +16,4 @@ class Application():
         self.amazon_prime_page = AmazonPrimePage(self.driver)
         self.sign_in_page = SignInPage(self.driver)
         self.cart_page = Cart(self.driver)
+        self.product_detail_page = ProductDetailPage(self.driver)

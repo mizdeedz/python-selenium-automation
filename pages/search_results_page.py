@@ -5,7 +5,7 @@ from pages.base_page import Page
 
 class SearchResults(Page):
     SEARCH_RESULT_TEXT = (By.XPATH, "//span[@class='a-color-state a-text-bold']")
-    DEPARTMENT_LOCATOR = (By.CSS_SELECTOR, "#nav-subnav[data-cateogry='{CATEGORY}']")
+    DEPARTMENT_LOCATOR = (By.CSS_SELECTOR, "#nav-subnav[data-category='{CATEGORY}']")
 
     def _get_expected_category_locator(self, expected_category):
         return [self.DEPARTMENT_LOCATOR[0], self.DEPARTMENT_LOCATOR[1].replace('{CATEGORY}', expected_category)]

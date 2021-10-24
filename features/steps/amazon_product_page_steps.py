@@ -24,6 +24,16 @@ def add_product_to_cart(context):
     context.driver.find_element(*ADD_TO_CART).click()
 
 
+@when('Hover over New Arrivals link')
+def hover_over_new_arrivals_link(context):
+    context.app.product_detail_page.hover_over_new_arrivals_link()
+
+
+@then('Verify Women category is present')
+def verify_women_category_present(context):
+    context.app.product_detail_page.verify_women_category_present()
+
+
 @then('Verify user can click through colors')
 def verify_can_click_through_colors(context):
     expected_colors = ['Dark Navy', 'Dusty Rose', 'Black']

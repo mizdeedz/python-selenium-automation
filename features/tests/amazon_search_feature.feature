@@ -30,6 +30,12 @@ Feature: test cases for search functionality
     And Click on amazon search icon
     Then Verify books department is selected
 
+  Scenario: User can select and search in baby department
+    Given Open Amazon page
+    When Select department by alias baby-products
+    When Input bottle into amazon search
+    And Click on amazon search icon
+    Then Verify baby-products department is selected
 
 #  Scenario Outline: User can search for a product on Amazon
 #    Given Open Amazon page
