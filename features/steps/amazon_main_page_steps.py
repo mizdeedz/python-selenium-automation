@@ -39,6 +39,16 @@ def wait_sec(context, sec):
     sleep(int(sec))
 
 
+@when('Hover over language options')
+def hover_over_language_options(context):
+    context.app.header.hover_over_language_options()
+
+
+@when('Select department by alias {alias}')
+def select_department(context, alias):
+    context.app.header.select_department_by_alias(alias)
+
+
 @then('Verify hamburger menu icon is present')
 def verify_ham_menu(context):
     context.driver.find_element(*HAM_MENU_ICON)
@@ -55,6 +65,17 @@ def verify_sign_in_disappeared(context):
     context.driver.wait.until(EC.invisibility_of_element_located((SIGN_IN_POPUP_BTN)), message='Sign in btn is visible')
 
     context.driver.wait.until(EC.url_to_be('https://www.amazon.com'))
+
+
+@then('Verify correct options present')
+def verify_lang_options_present(context):
+    context.app.header.verify_lang_options_present()
+
+
+@then('Verify {expected_department} department is selected')
+def verify_correct_department_selected(context, expected_department):
+    context.app.search_results_page.verify_correct_department_selected(expected_department)
+
 
 
 # convert str expected_variable to int for assertion
