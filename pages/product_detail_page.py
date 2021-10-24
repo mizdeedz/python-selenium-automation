@@ -19,6 +19,4 @@ class ProductDetailPage(Page):
         self.wait_for_element_appear(*self.CATEGORY_WOMEN)
         self.find_element(*self.CATEGORY_WOMEN_TEXT)
 
-        # category = self.find_element(*self.CATEGORY_WOMEN).text
-        # assert category == 'Women'
 
