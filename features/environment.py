@@ -7,8 +7,8 @@ from selenium.webdriver.support.events import EventFiringWebDriver
 from support.logger import logger, MyListener
 
 # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-bs_user = 'jessicatinsley_oaecDv'
-bs_pw = 'ehYm5xf9jCRmUM7e6UpQ'
+# bs_user = ''
+# bs_pw = ''
 
 # Allure command to wrap:
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/product_page.feature
